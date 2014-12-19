@@ -1,0 +1,4 @@
+Manifest-Version: 1.0 
+Created-By: Sriram Pulipaka
+Class-Path: stockSentimentCombiner.jar
+Main-Class: StockSentimentCombiner

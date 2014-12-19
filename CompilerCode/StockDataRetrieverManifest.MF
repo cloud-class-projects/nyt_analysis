@@ -1,0 +1,4 @@
+Manifest-Version: 1.0 
+Created-By: Sriram Pulipaka
+Class-Path: stockDataRetriever.jar /home/ubuntu/lib/gson-2.3.1.jar /home/ubuntu/lib/mongo-java-driver-2.12.4.jar
+Main-Class: MongoStockDataRetriever
