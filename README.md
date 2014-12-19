@@ -39,7 +39,8 @@ Copy the following to /home/ubuntu
  - StockSentimentCorrelation.sh
 ```
 ```
-- Download StanfordCoreNLP from (link) and place it in lib
+- Download StanfordCoreNLP from (https://www.dropbox.com/s/mvbct0xvp5hptef/stanford-corenlp-3.5.0-models.jar?dl=0) 
+  and place it in /home/ubuntu/lib
 - Copy 'mongo-java-driver-2.12.4.jar' and 'mongo-hadoop-core-1.3.0.jar' from '/home/ubuntu/lib'
 directory to '/usr/lib/hadoop/lib'. This is to be done on all nodes.
 - Restart hadoop services on all nodes.
