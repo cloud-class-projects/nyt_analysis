@@ -71,11 +71,13 @@ chmod 755 StockSentimentCorrelation.sh
 ```
 
 ```
-Country and Company names should be specified in CamelCase. (First letter uppercase)
-Countries available: China, Japan, Germany.
+- Country and Company names should be specified in CamelCase. (First letter uppercase)
+- Countries available: China, Japan, Germany.
 (Due to space constraints, we have uploaded the data only for these 3 countries so
 that it can be used to test the code.)
-Companies available: Microsoft, Amazon
+- Graphs for China, Germany, India, Israel, Japan, Russia and Iran are available in
+the 'Graphs' directory. They can be used for verification.
+- Companies available: Microsoft, Amazon
 ```
 
 The output graph is a PDF stored in /home/ubuntu (format: *country/company*_sentiment.pdf)
