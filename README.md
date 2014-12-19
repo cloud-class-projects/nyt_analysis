@@ -19,6 +19,14 @@ This has to be done on all nodes.
 6. Install mongoengine as show below:
    - apt-get install python-pip
    - pip install mongoengine
+7. Install R as shown below:
+   - sudo apt-get update
+   - sudo apt-get install r-base
+   - Install g++ if not already installed.
+   - Login to R. ($ R) and execute the following 2 commands:
+	install.packages("ggplot2")
+	install.packages("reshape2")
+   - Exit R by typing 'q()'.
 ```
 #Execution Instructions
 ```
