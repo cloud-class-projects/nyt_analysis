@@ -34,17 +34,7 @@ sudo su - root
 cd /home/ubuntu
 ```
 ```
-Copy the following to /home/ubuntu
- - HadoopSentimentAnalyzer
- - MongoSentimentDataRetriever
- - MongoStockDataRetriever
- - StockSentimentCombiner
- - lib
- - CompilerCode
- - rScripts
- - DataLoader.sh
- - NYTimesSentimentAnalysis.sh
- - StockSentimentCorrelation.sh
+Copy all the above directories and files to /home/ubuntu
 ```
 ```
 - Download StanfordCoreNLP from (https://www.dropbox.com/s/mvbct0xvp5hptef/stanford-corenlp-3.5.0-models.jar?dl=0) 
