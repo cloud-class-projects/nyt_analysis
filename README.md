@@ -1,3 +1,5 @@
+Project report included. Name of the file: ```Project_Report_NYTimes_Analysis.pdf```
+
 #Installation Instructions
 
 *All the installations are to be carried out as* **root** *user*
