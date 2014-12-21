@@ -69,5 +69,6 @@ that it can be used to test the code.)
 the 'Graphs' directory. They can be used for verification.
 - Companies available: Microsoft, Amazon
 ```
-
+```
 The output graph is a PDF stored in /home/ubuntu (format: *country/company*_sentiment.pdf)
+```
