@@ -65,10 +65,10 @@ chmod 755 StockSentimentCorrelation.sh
 - Countries available: China, Japan, Germany.
 (Due to space constraints, we have uploaded the data only for these 3 countries so
 that it can be used to test the code.)
-- Graphs for China, Germany, India, Israel, Japan, Russia and Iran are available in
+- Graphs for China, Germany, India, Israel, Japan, Russia, Iran and Microsoft are available in
 the 'Graphs' directory. They can be used for verification.
 - Companies available: Microsoft, Amazon
 ```
 ```
-The output graph is a PDF stored in /home/ubuntu (format: *country/company*_sentiment.pdf)
+The output graph is a PDF stored in /home/ubuntu (format: country_sentiment.pdf or company_combined.pdf)
 ```
