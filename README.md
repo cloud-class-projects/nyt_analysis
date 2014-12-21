@@ -1,4 +1,4 @@
-Project report included. Nmae of the file: ```Project_Report_NYTimes_Analysis.pdf```
+Project report included. Name of the file: ```Project_Report_NYTimes_Analysis.pdf```
 
 #Installation Instructions
 
