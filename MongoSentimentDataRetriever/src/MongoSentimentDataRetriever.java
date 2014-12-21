@@ -11,7 +11,12 @@ import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
 
 public class MongoSentimentDataRetriever {
-
+	
+	/*
+	 * This method takes the name of a country or company as input and 
+	 * retrieves its sentiment values from MongoDB.
+	 */
+	
 	public static void main(String[] args) {
 		try {
 
@@ -20,10 +25,13 @@ public class MongoSentimentDataRetriever {
 						.println("Usage: MongoSentimentDataRetriever country/company <CountryName/CompanyName>");
 				System.exit(-1);
 			}
-
+			
+			// Set the MongoDB drivers.
 			DBCollection coll = setDrivers(args[1]);
 			BasicDBObject returnField = new BasicDBObject();
-
+			
+			// based on the given input (country/company), set the 
+			// corresponding fields to retrieve from MongoDB
 			if (args[0].equals("country")) {
 				returnField.put("_id", 1);
 				returnField.put("count", 1);
@@ -32,13 +40,21 @@ public class MongoSentimentDataRetriever {
 				returnField.put("sentiment", 1);
 			}
 
+			// Instantiate a file writer object
 			BufferedWriter writer = new BufferedWriter(new FileWriter(
 					"/home/ubuntu/" + args[1] + "_sentiment"));
-
+			
+			// Build and Execute the query
 			DBCursor cursor = coll.find(null, returnField);
+			
+			// Instantiate a Gson object to convert the retrieved 
+			// JSON values to Java objects.
 			Gson gson = new Gson();
+			
+			// Instantiate a TreeMap to store the retrieved values.
 			TreeMap<String, Integer> map = new TreeMap<String, Integer>();
 
+			// Convert and Store the values in a TreeMap.
 			while (cursor.hasNext()) {
 
 				if (args[0].equals("country")) {
@@ -55,7 +71,8 @@ public class MongoSentimentDataRetriever {
 					map.put(date, sentiment);
 				}
 			}
-
+			
+			// Write the map to a file
 			for (Entry<String, Integer> entry : map.entrySet()) {
 				writer.write(entry.getKey() + "\t" + entry.getValue());
 				writer.write("\n");
@@ -66,6 +83,10 @@ public class MongoSentimentDataRetriever {
 		}
 	}
 
+	/*
+	 * This method sets the drivers so that Java can communicate with MongoDB.
+	 * Returns a MongoDB collection object.
+	 */
 	public static DBCollection setDrivers(String args1) {
 		DBCollection coll = null;
 		try {

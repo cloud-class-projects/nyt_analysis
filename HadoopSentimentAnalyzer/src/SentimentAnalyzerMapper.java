@@ -1,5 +1,13 @@
 import java.io.IOException;
 
+/*
+ * This is the mapper class.
+ * Input Key format: Object
+ * Input value format: BSONObject
+ * Output Key format: Text
+ * Output value format: IntWritable
+ */
+
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -8,11 +16,14 @@ import org.bson.BSONObject;
 public class SentimentAnalyzerMapper extends
 		Mapper<Object, BSONObject, Text, IntWritable> {
 
+	// Instantiate CoreNLP object
 	CoreNLPSentimentAnalyzer sentiAnalyzer = new CoreNLPSentimentAnalyzer();
 
 	public void map(Object key, BSONObject value, Context context)
 			throws IOException, InterruptedException {
 
+		// validate the input and pass the input to the CoreNLP object
+		// to generate sentiments
 		if (value.containsField("year") && value.containsField("month")
 				&& value.containsField("main_content")) {
 			String main_content = value.get("main_content").toString();
@@ -24,10 +35,12 @@ public class SentimentAnalyzerMapper extends
 				result = 3;
 			}
 
+			// create a custom key to write to the output
 			String year = value.get("year").toString();
 			String month = value.get("month").toString();
 			String mapperKey = year + "-" + month + "-" + result;
 
+			// write the output to context
 			context.write(new Text(mapperKey), new IntWritable(1));
 		}
 	}
