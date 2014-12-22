@@ -36,11 +36,14 @@ sudo su - root
 cd /home/ubuntu
 ```
 ```
-Copy all the above directories and files to /home/ubuntu
+Copy/move all the above directories and files to /home/ubuntu
 ```
 ```
-- Download StanfordCoreNLP from (https://www.dropbox.com/s/mvbct0xvp5hptef/stanford-corenlp-3.5.0-models.jar?dl=0) 
-  and place it in /home/ubuntu/lib
+- Download StanfordCoreNLP using:
+  sudo wget https://www.dropbox.com/s/mvbct0xvp5hptef/stanford-corenlp-3.5.0-models.jar?dl=1
+  sudo mv stanford-corenlp-3.5.0-models.jar\?dl\=1 stanford-corenlp-3.5.0-models.jar
+  sudo mv stanford-corenlp-3.5.0-models.jar /home/ubuntu/lib
+
 - Copy 'mongo-java-driver-2.12.4.jar' and 'mongo-hadoop-core-1.3.0.jar' from '/home/ubuntu/lib'
 directory to '/usr/lib/hadoop/lib'. This is to be done on all nodes.
 - Restart hadoop services on all nodes.
